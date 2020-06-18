@@ -14,45 +14,45 @@
         android:padding="16dp"
         tools:context="com.livinglifetechway.quickpermissions_sample.kotlin.AllKotlinActivity">
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/handleRationale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Handle Rationale?" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/customRationaleMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Use custom rationale message?" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/customRationaleMethod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Use custom rationale callback?" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/handlePermanentlyDenied"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Handle Permanently Denied?" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/customPermanentlyDeniedMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Use custom permanently denied message?" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/customPermanentlyDeniedMethod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Use custom permanently denied callback?" />
 
-        <android.support.v7.widget.AppCompatCheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/customDeniedMethod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

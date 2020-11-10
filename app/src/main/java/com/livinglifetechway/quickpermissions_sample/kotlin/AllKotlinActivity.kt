@@ -2,17 +2,14 @@ package com.livinglifetechway.quickpermissions_sample.kotlin
 
 import android.Manifest
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
-import com.livinglifetechway.k4kotlin.onClick
-import com.livinglifetechway.k4kotlin.setBindingView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.livinglifetechway.quickpermissions_kotlin.runWithPermissions
-import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsRequest
-import com.livinglifetechway.quickpermissions_sample.R
 import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsOptions
+import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsRequest
 import com.livinglifetechway.quickpermissions_sample.databinding.ActivityAllKotlinBinding
 
 class AllKotlinActivity : AppCompatActivity() {
@@ -38,16 +35,19 @@ class AllKotlinActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = setBindingView(R.layout.activity_all_kotlin)
 
-        mBinding.button.onClick {
+        mBinding = ActivityAllKotlinBinding.inflate(layoutInflater)
+        val view = mBinding.root
+        setContentView(view)
+
+        mBinding.button.setOnClickListener {
             // create the quickpermissions object
             val options = QuickPermissionsOptions()
             options.handleRationale = mBinding.handleRationale.isChecked
-            if (mBinding.customRationaleMessage.isChecked) {
+            if(mBinding.customRationaleMessage.isChecked) {
                 options.rationaleMessage = "Custom rational message"
             }
-            if (mBinding.customRationaleMethod.isChecked) {
+            if(mBinding.customRationaleMethod.isChecked) {
                 options.rationaleMethod = { rationaleCallback(it) }
             }
             options.handlePermanentlyDenied = mBinding.handlePermanentlyDenied.isChecked
@@ -105,9 +105,6 @@ class AllKotlinActivity : AppCompatActivity() {
                 .setPositiveButton("OKAY") { _, _ -> }
                 .setCancelable(false)
                 .show()
-//        val toast = Toast.makeText(this, req.deniedPermissions.size.toString() + " permission(s) denied. This feature will not work.", Toast.LENGTH_LONG)
-//        toast.setGravity(Gravity.CENTER, 0, 0)
-//        toast.show()
     }
 
 }

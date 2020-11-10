@@ -1,13 +1,21 @@
 package com.livinglifetechway.quickpermissions_sample
 
-import androidx.databinding.DataBindingUtil
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.livinglifetechway.quickpermissions_sample.databinding.ActivityMainBinding
 import com.livinglifetechway.quickpermissions_sample.kotlin.AllKotlinActivity
-import org.jetbrains.anko.startActivity
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    @ApplicationContext
+    @Inject
+    lateinit var context: Context
 
     lateinit var mBinding: ActivityMainBinding
 
@@ -16,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         mBinding.buttonKotlinAll.setOnClickListener {
-            startActivity<AllKotlinActivity>()
+            startActivity(Intent(this, AllKotlinActivity::class.java))
         }
 
     }
